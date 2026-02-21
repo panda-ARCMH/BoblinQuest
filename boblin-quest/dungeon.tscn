@@ -7,6 +7,9 @@
 radius = 62.499992
 height = 154.99998
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu0b2"]
+bg_color = Color(0.46149427, 0.59201896, 0.8874402, 1)
+
 [node name="Dungeon" type="Node2D" unique_id=65165132]
 
 [node name="Boblin" type="CharacterBody2D" parent="." unique_id=1995546284]
@@ -24,3 +27,41 @@ shape = SubResource("CapsuleShape2D_qu0b2")
 
 [node name="Camera2D" type="Camera2D" parent="Boblin" unique_id=479153783]
 limit_enabled = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1609798865]
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1782566900]
+
+[node name="Control" type="Control" parent="ui" unique_id=189286991]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bottom bar" type="Panel" parent="ui/Control" unique_id=1127006963]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qu0b2")
+
+[node name="TextureRect" type="TextureRect" parent="ui/Control" unique_id=813101235]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 260.0
+offset_right = 116.0
+offset_bottom = 339.0
+grow_vertical = 2
+texture = ExtResource("1_6elmv")
+expand_mode = 1
