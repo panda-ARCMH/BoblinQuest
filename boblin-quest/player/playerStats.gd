@@ -4,7 +4,7 @@ class_name PlayerStats
 #  Base Stats
 # -----------------------------------
 @export var base_health: int = 100
-@export var move_speed: float = 200.0
+@export var move_speed: float = 250.0
 @export var base_damage: int = 3
 @export var attack_speed: float = 1.0 # TODO: Cap Attack speed at something reasonable (like 2.0)
 
