@@ -14,8 +14,6 @@ func _physics_process(_delta: float) -> void:
 		"ui_up",
 		"ui_down"
 	)
-	if input_dir != Vector2.ZERO:
-		print("moving")
 		
 	# Player move speed determined by the Move Speed stat.
 	velocity = input_dir * player_stats.get_move_speed()

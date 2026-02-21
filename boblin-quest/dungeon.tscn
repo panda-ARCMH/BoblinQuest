@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://baplemtd017hj"]
 
 [ext_resource type="Texture2D" uid="uid://csvw4h5lauuhu" path="res://assets/initialconcept.png" id="3_noicg"]
+[ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="3_orq0m"]
 [ext_resource type="Script" uid="uid://13l3k3ctgewr" path="res://Enemies/enemy_spawner.gd" id="4_4f3i4"]
 [ext_resource type="PackedScene" uid="uid://cptsos77ce241" path="res://Enemies/BasicEnemy.tscn" id="5_q5kms"]
 [ext_resource type="PackedScene" uid="uid://de5xwicgo18vo" path="res://Enemies/TankEnemy.tscn" id="6_tgur7"]
@@ -27,3 +28,5 @@ script = ExtResource("4_4f3i4")
 basic_enemy_scene = ExtResource("5_q5kms")
 tank_enemy_scene = ExtResource("6_tgur7")
 ranged_enemy_scene = ExtResource("7_kun6q")
+
+[node name="BoblinCharacter_tscn" parent="." unique_id=105154980 instance=ExtResource("3_orq0m")]
