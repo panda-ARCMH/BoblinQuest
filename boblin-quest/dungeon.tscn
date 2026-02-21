@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://baplemtd017hj"]
 
 [ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_6elmv"]
-[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://boblin.gd" id="1_qu0b2"]
+[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="1_qu0b2"]
 [ext_resource type="Texture2D" uid="uid://csvw4h5lauuhu" path="res://assets/initialconcept.png" id="3_noicg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu0b2"]
@@ -50,6 +50,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -209.0
+offset_right = -290.0
+offset_bottom = -209.0
 grow_horizontal = 2
 grow_vertical = 2
 
