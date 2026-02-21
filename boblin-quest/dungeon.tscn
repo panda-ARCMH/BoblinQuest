@@ -2,7 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dhd628yyqqqd" path="res://world_tiles.png" id="1_noicg"]
 [ext_resource type="Texture2D" uid="uid://nen1dkv62p1o" path="res://assets/world_tiles.png" id="2_noicg"]
-[ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
+[ext_resource type="Script" uid="uid://13l3k3ctgewr" path="res://Enemies/enemy_spawner.gd" id="3_4f3i4"]
+[ext_resource type="PackedScene" uid="uid://cptsos77ce241" path="res://Enemies/BasicEnemy.tscn" id="4_q5kms"]
+[ext_resource type="PackedScene" uid="uid://de5xwicgo18vo" path="res://Enemies/TankEnemy.tscn" id="5_tgur7"]
+[ext_resource type="PackedScene" uid="uid://dchv7orpcubun" path="res://Enemies/RangedEnemy.tscn" id="6_kun6q"]
+[ext_resource type="PackedScene" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
 texture = ExtResource("1_noicg")
@@ -185,5 +189,9 @@ tile_set = SubResource("TileSet_vol8w")
 occlusion_enabled = false
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
+script = ExtResource("3_4f3i4")
+basic_enemy_scene = ExtResource("4_q5kms")
+tank_enemy_scene = ExtResource("5_tgur7")
+ranged_enemy_scene = ExtResource("6_kun6q")
 
 [node name="BoblinCharacter_tscn" parent="." unique_id=105154980 instance=ExtResource("6_vol8w")]
