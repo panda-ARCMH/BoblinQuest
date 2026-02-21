@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_6elmv"]
 [ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="1_qu0b2"]
 [ext_resource type="Texture2D" uid="uid://csvw4h5lauuhu" path="res://assets/initialconcept.png" id="3_noicg"]
+[ext_resource type="Script" uid="uid://13l3k3ctgewr" path="res://Enemies/enemy_spawner.gd" id="4_4f3i4"]
+[ext_resource type="PackedScene" uid="uid://cptsos77ce241" path="res://Enemies/BasicEnemy.tscn" id="5_q5kms"]
+[ext_resource type="PackedScene" uid="uid://de5xwicgo18vo" path="res://Enemies/TankEnemy.tscn" id="6_tgur7"]
+[ext_resource type="PackedScene" uid="uid://dchv7orpcubun" path="res://Enemies/RangedEnemy.tscn" id="7_kun6q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu0b2"]
 radius = 62.499992
@@ -82,3 +86,9 @@ offset_bottom = 339.0
 grow_vertical = 2
 texture = ExtResource("1_6elmv")
 expand_mode = 1
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
+script = ExtResource("4_4f3i4")
+basic_enemy_scene = ExtResource("5_q5kms")
+tank_enemy_scene = ExtResource("6_tgur7")
+ranged_enemy_scene = ExtResource("7_kun6q")
