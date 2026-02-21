@@ -2,10 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_6elmv"]
 [ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://boblin.gd" id="1_qu0b2"]
+[ext_resource type="Texture2D" uid="uid://csvw4h5lauuhu" path="res://assets/initialconcept.png" id="3_noicg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu0b2"]
 radius = 62.499992
 height = 154.99998
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
+texture = ExtResource("3_noicg")
+texture_region_size = Vector2i(128, 128)
+4:3/0 = 0
+3:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_my81p"]
+sources/0 = SubResource("TileSetAtlasSource_orq0m")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu0b2"]
 bg_color = Color(0.46149427, 0.59201896, 0.8874402, 1)
@@ -29,6 +40,8 @@ shape = SubResource("CapsuleShape2D_qu0b2")
 limit_enabled = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1609798865]
+z_index = -1
+tile_set = SubResource("TileSet_my81p")
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1782566900]
 
