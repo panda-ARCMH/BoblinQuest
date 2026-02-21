@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhd628yyqqqd" path="res://world_tiles.png" id="1_noicg"]
 [ext_resource type="Texture2D" uid="uid://nen1dkv62p1o" path="res://assets/world_tiles.png" id="2_noicg"]
+[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="4_orq0m"]
 [ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
@@ -186,4 +187,5 @@ occlusion_enabled = false
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
 
-[node name="BoblinCharacter_tscn" parent="." unique_id=105154980 instance=ExtResource("6_vol8w")]
+[node name="BoblinCharacter_tscn" parent="." unique_id=1672009507 instance=ExtResource("6_vol8w")]
+script = ExtResource("4_orq0m")
