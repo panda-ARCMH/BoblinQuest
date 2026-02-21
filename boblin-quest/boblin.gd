@@ -4,6 +4,7 @@ const SPEED := 300.0
 
 func _physics_process(delta: float) -> void:
 	var dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	print('moving')
+	if dir != Vector2.ZERO:
+		print("moving")
 	velocity = dir * SPEED
 	move_and_slide()

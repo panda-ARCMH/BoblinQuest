@@ -4,15 +4,18 @@
 [ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://boblin.gd" id="1_qu0b2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu0b2"]
+radius = 62.499992
+height = 154.99998
 
 [node name="Dungeon" type="Node2D" unique_id=65165132]
 
 [node name="Boblin" type="CharacterBody2D" parent="." unique_id=1995546284]
+position = Vector2(0, 1)
 script = ExtResource("1_qu0b2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Boblin" unique_id=131718730]
 position = Vector2(4.7683716e-07, 0)
-scale = Vector2(0.11328124, 0.1796875)
+scale = Vector2(0.8, 1)
 texture = ExtResource("1_6elmv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boblin" unique_id=538353630]
