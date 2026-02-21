@@ -2,20 +2,28 @@
 
 [ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="1_6muyc"]
 [ext_resource type="Texture2D" uid="uid://yjmuebecv6q" path="res://assets/assets/player/player_1.png" id="3_1e7qy"]
+[ext_resource type="PackedScene" uid="uid://c06ophgo06avd" path="res://HUD/HUD.tscn" id="4_piqky"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e7qy"]
-size = Vector2(13, 15)
+[sub_resource type="Resource" id="Resource_piqky"]
+script = ExtResource("2_1e7qy")
+metadata/_custom_type_script = "uid://d1g0nt14oal5p"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1e7qy"]
+radius = 6.0
+height = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1013156070 groups=["Player"]]
 script = ExtResource("1_6muyc")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=865174906]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=557506522]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=426044725]
-shape = SubResource("RectangleShape2D_1e7qy")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2021122109]
-scale = Vector2(4, 4)
+[node name="Sprite2D" type="Sprite2D" parent="boblinCharacterBody2D" unique_id=2021122109]
 texture = ExtResource("3_1e7qy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boblinCharacterBody2D" unique_id=426044725]
+shape = SubResource("CapsuleShape2D_1e7qy")
+
+[node name="Camera2D" type="Camera2D" parent="boblinCharacterBody2D" unique_id=1419122934]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Hud" parent="." unique_id=2008300080 instance=ExtResource("4_piqky")]
