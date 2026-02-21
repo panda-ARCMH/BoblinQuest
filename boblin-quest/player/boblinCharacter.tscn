@@ -10,8 +10,8 @@ script = ExtResource("2_1e7qy")
 metadata/_custom_type_script = "uid://d1g0nt14oal5p"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1e7qy"]
-radius = 30.0
-height = 62.0
+radius = 6.0
+height = 16.0
 
 [node name="BoblinCharacter_tscn" type="Node2D" unique_id=105154980]
 
@@ -22,7 +22,6 @@ player_stats = SubResource("Resource_piqky")
 [node name="Area2D" type="Area2D" parent="boblinCharacterBody2D" unique_id=865174906]
 
 [node name="Sprite2D" type="Sprite2D" parent="boblinCharacterBody2D" unique_id=2021122109]
-scale = Vector2(4, 4)
 texture = ExtResource("3_1e7qy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boblinCharacterBody2D" unique_id=426044725]
