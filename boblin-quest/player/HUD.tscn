@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c06ophgo06avd"]
+
+[ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_1jg6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig88g"]
+bg_color = Color(0.46149427, 0.59201896, 0.8874402, 1)
+
+[node name="Hud" type="Node2D" unique_id=2008300080]
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1987143767]
+
+[node name="Control" type="Control" parent="ui" unique_id=478327714]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="bottom bar" type="Panel" parent="ui/Control" unique_id=721457821]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig88g")
+
+[node name="TextureRect" type="TextureRect" parent="ui/Control" unique_id=472368401]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -102.0
+offset_right = 113.0
+offset_bottom = -23.0
+grow_vertical = 2
+texture = ExtResource("1_1jg6f")
+expand_mode = 1
