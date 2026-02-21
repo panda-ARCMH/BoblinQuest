@@ -3,6 +3,10 @@ extends CharacterBody2D
 # Boblin's stats
 @export var player_stats: PlayerStats = PlayerStats.new()
 
+## Getter for player stats 
+func get_player_stats() -> PlayerStats:
+	return player_stats
+
 func _ready() -> void:
 	player_stats.start_run();
 

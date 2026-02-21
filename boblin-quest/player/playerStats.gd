@@ -68,14 +68,13 @@ func apply_damage(damage_amount: float) -> void:
 func is_dead() -> bool:
 	return player_health <= 0.0
 
-# TODO: Add item pick up functions
 ## Stat Modification With Items
 ## -----------------------------------
 
 ## Increases player max HP
-func on_add_max_health() -> void:
+func on_add_max_health(amount: float = 1.0) -> void:
 	additional_health += 1.0
-	player_health = clamp(player_health, 0, get_max_health())
+	player_health = clamp(player_health, 0.0, get_max_health())
 
 ## Apply healing to the player current HP
 func on_add_healing(amount: float) -> void:
@@ -92,3 +91,20 @@ func on_add_max_speed(amount: float) -> void:
 ## Apply attack speed increase to the player
 func on_add_attack_speed(amount: float) -> void:
 	additional_attack_speed += amount
+
+## Applies the stat modifier to the player depending on the type of item
+## that is picked up. refer to ItemPickup.gd to see the dictionary.
+func apply_stat_modifiers(modifiers: Dictionary) -> void:
+	for stat_key in modifiers.keys():
+		var amount: float = float(modifiers[stat_key])
+		match String(stat_key):
+				"max_health":
+					on_add_max_health(amount)
+				"heal":
+					on_add_healing(amount)
+				"damage":
+					on_add_damage(amount)
+				"move_speed":
+					on_add_max_speed(amount)
+				"attack_speed":
+					on_add_attack_speed(amount)
