@@ -8,8 +8,9 @@
 script = ExtResource("2_1e7qy")
 metadata/_custom_type_script = "uid://d1g0nt14oal5p"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e7qy"]
-size = Vector2(13, 15)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1e7qy"]
+radius = 30.0
+height = 62.0
 
 [node name="BoblinCharacter_tscn" type="Node2D" unique_id=105154980]
 
@@ -24,4 +25,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_1e7qy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boblinCharacterBody2D" unique_id=426044725]
-shape = SubResource("RectangleShape2D_1e7qy")
+shape = SubResource("CapsuleShape2D_1e7qy")
+
+[node name="Camera2D" type="Camera2D" parent="boblinCharacterBody2D" unique_id=1419122934]
+zoom = Vector2(2.5, 2.5)
