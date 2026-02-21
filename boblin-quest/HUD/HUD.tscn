@@ -14,6 +14,11 @@ expand_margin_top = 500.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_aa5tu"]
 atlas = ExtResource("2_ja1d4")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7ubu"]
+bg_color = Color(0, 0.33333334, 0.05882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amwvk"]
+
 [node name="Hud" type="Node2D" unique_id=2008300080]
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1987143767]
@@ -57,13 +62,23 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 61.0
-offset_top = -93.0
-offset_right = 158.0
-offset_bottom = 7.0
+offset_left = 54.0
+offset_top = -90.0
+offset_right = 151.0
+offset_bottom = 10.0
 grow_vertical = 2
 texture = SubResource("AtlasTexture_aa5tu")
 expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="ui/Control/Panel" unique_id=2087760468]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 177.0
+offset_right = 362.0
+offset_bottom = 219.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b7ubu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_amwvk")
+rounded = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui/Control" unique_id=1865703965]
 layout_mode = 0
