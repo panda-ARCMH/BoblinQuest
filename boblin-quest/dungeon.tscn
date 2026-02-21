@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://baplemtd017hj"]
+
+[ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_6elmv"]
+[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://boblin.gd" id="1_qu0b2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu0b2"]
+
+[node name="Dungeon" type="Node2D" unique_id=65165132]
+
+[node name="Boblin" type="CharacterBody2D" parent="." unique_id=1995546284]
+script = ExtResource("1_qu0b2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boblin" unique_id=131718730]
+position = Vector2(4.7683716e-07, 0)
+scale = Vector2(0.11328124, 0.1796875)
+texture = ExtResource("1_6elmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boblin" unique_id=538353630]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CapsuleShape2D_qu0b2")
+
+[node name="Camera2D" type="Camera2D" parent="Boblin" unique_id=479153783]
+limit_enabled = false

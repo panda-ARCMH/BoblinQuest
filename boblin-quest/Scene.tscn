@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://iqwa70xex205"]
+
+[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://boblin.gd" id="1_4cvuw"]
+[ext_resource type="Texture2D" uid="uid://bev1ttcujvfi5" path="res://icon.svg" id="1_t6lng"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04pw2"]
+
+[node name="game" type="Node2D" unique_id=159874955]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=883621375]
+position = Vector2(549, 306)
+script = ExtResource("1_4cvuw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=365195595]
+position = Vector2(4.7683716e-07, 0)
+scale = Vector2(0.11328124, 0.1796875)
+texture = ExtResource("1_t6lng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1290041623]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CapsuleShape2D_04pw2")
