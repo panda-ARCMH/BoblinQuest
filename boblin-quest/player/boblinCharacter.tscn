@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5q1edwdtifuw"]
 
 [ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="1_6muyc"]
+[ext_resource type="Script" uid="uid://d1g0nt14oal5p" path="res://player/playerStats.gd" id="2_1e7qy"]
 [ext_resource type="Texture2D" uid="uid://yjmuebecv6q" path="res://assets/assets/player/player_1.png" id="3_1e7qy"]
 [ext_resource type="PackedScene" uid="uid://c06ophgo06avd" path="res://HUD/HUD.tscn" id="4_piqky"]
 
@@ -12,10 +13,13 @@ metadata/_custom_type_script = "uid://d1g0nt14oal5p"
 radius = 6.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1013156070 groups=["Player"]]
-script = ExtResource("1_6muyc")
+[node name="BoblinCharacter_tscn" type="Node2D" unique_id=105154980]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=865174906]
+[node name="boblinCharacterBody2D" type="CharacterBody2D" parent="." unique_id=2041915979]
+script = ExtResource("1_6muyc")
+player_stats = SubResource("Resource_piqky")
+
+[node name="Area2D" type="Area2D" parent="boblinCharacterBody2D" unique_id=865174906]
 
 [node name="Sprite2D" type="Sprite2D" parent="boblinCharacterBody2D" unique_id=2021122109]
 texture = ExtResource("3_1e7qy")
