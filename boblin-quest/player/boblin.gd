@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-# Boblin's stats
+# Node Calls
 @export var player_stats: PlayerStats = PlayerStats.new()
+@onready var sprite = self.get_node("AnimatedSprite2D")
 
 func _ready() -> void:
 	player_stats.start_run();
@@ -14,9 +15,18 @@ func _physics_process(_delta: float) -> void:
 		"ui_up",
 		"ui_down"
 	)
-	if input_dir != Vector2.ZERO:
-		print("moving")
+	
+	# Sprite Animation
+	if Input.is_action_pressed("ui_right"):
+		sprite.flip_h = false
+	elif Input.is_action_pressed("ui_left"):
+		sprite.flip_h = true
 		
+	if input_dir:
+		sprite.play("move")
+	else:
+		sprite.stop()
+	
 	# Player move speed determined by the Move Speed stat.
 	velocity = input_dir * player_stats.get_move_speed()
 	move_and_slide()

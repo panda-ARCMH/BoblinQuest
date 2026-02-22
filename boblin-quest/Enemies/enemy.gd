@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @export var speed: float = 80
 @export var health: int = 3
-@export var chase_range: float = 200.0
+@export var chase_range: float = 600.0
 
-@onready var player = get_tree().get_first_node_in_group("Boblin")
+@onready var player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta):
 	if player:
@@ -15,7 +15,6 @@ func _physics_process(delta):
 			velocity = direction * speed
 		else:
 			velocity = Vector2.ZERO
-
 		move_and_slide()
 
 func take_damage(amount):

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Boblin Quest"
-run/main_scene="uid://virxorhc1ovc"
+run/main_scene="uid://baplemtd017hj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[global_group]
+
+Player=""
 
 [input]
 

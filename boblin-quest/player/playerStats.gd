@@ -1,6 +1,6 @@
 extends Resource
 class_name PlayerStats
-
+signal health_changed(current: int, max_hp: int)
 #  Base Stats
 # -----------------------------------
 @export var base_health: int = 100
@@ -44,6 +44,7 @@ func start_run():
 	# Should reset to base since bonuses were cleared.
 	# DOUBLE CHECK THIS
 	player_health = get_max_health()
+	health_changed.emit(player_health, get_max_health())
 
 # Resets the collected item bonuses collected IN RUN
 func reset_run_bonuses():
@@ -58,6 +59,7 @@ func reset_run_bonuses():
 # if it falls between the current, min, and max player health.
 func apply_damage(damage_amount: int) -> void:
 	player_health = clamp(player_health - damage_amount, 0, get_max_health())
+	health_changed.emit(player_health, get_max_health())
 
 # Determine whether the player is dead
 func is_dead() -> bool:
@@ -67,3 +69,4 @@ func is_dead() -> bool:
 # TODO: Add item pick up functions
 func heal() -> void:
 	player_health = clamp(player_health, 0, get_max_health())
+	health_changed.emit(player_health, get_max_health())
