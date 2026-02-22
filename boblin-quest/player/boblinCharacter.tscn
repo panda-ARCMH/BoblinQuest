@@ -28,13 +28,9 @@ animations = [{
 radius = 6.0
 height = 14.0
 
-[node name="BoblinCharacter_tscn" type="Node2D" unique_id=105154980]
+[node name="BoblinCharacter_tscn" type="CharacterBody2D" unique_id=1672009507 groups=["Player"]]
 
-[node name="boblinCharacterBody2D" type="CharacterBody2D" parent="." unique_id=2041915979]
-script = ExtResource("1_6muyc")
-player_stats = SubResource("Resource_piqky")
-
-[node name="Area2D" type="Area2D" parent="boblinCharacterBody2D" unique_id=865174906]
+[node name="Area2D" type="Area2D" parent="." unique_id=897464344]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="boblinCharacterBody2D" unique_id=888040248]
 sprite_frames = SubResource("SpriteFrames_ubnok")
@@ -44,10 +40,10 @@ frame_progress = 0.4415226
 visible = false
 texture = ExtResource("3_1e7qy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boblinCharacterBody2D" unique_id=426044725]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687873000]
 shape = SubResource("CapsuleShape2D_1e7qy")
 
-[node name="Camera2D" type="Camera2D" parent="boblinCharacterBody2D" unique_id=1419122934]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=181033019]
 zoom = Vector2(2.5, 2.5)
 
-[node name="Hud" parent="." unique_id=2008300080 instance=ExtResource("4_piqky")]
+[node name="Hud" parent="Camera2D" unique_id=2008300080 instance=ExtResource("4_piqky")]
