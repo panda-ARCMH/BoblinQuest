@@ -1,8 +1,12 @@
 [gd_scene format=4 uid="uid://baplemtd017hj"]
 
 [ext_resource type="Texture2D" uid="uid://nen1dkv62p1o" path="res://assets/world_tiles.png" id="2_noicg"]
-[ext_resource type="Script" uid="uid://c3jysr2vwf7qv" path="res://player/boblin.gd" id="4_orq0m"]
 [ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
+[ext_resource type="PackedScene" uid="uid://d0o4s721j58pu" path="res://items/healing_item.tscn" id="7_healing"]
+[ext_resource type="PackedScene" uid="uid://cc82ck07xuhrg" path="res://items/banana.tscn" id="8_banana"]
+[ext_resource type="PackedScene" uid="uid://dea3pmyrhg7q6" path="res://items/brown_goop.tscn" id="9_brown_goop"]
+[ext_resource type="PackedScene" uid="uid://djisvrxspnavt" path="res://items/energy_drink.tscn" id="10_energy_drink"]
+[ext_resource type="PackedScene" uid="uid://b4lqvxo7n8t7p" path="res://items/grum_grum.tscn" id="11_grum_grum"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
 texture = ExtResource("2_noicg")
@@ -189,6 +193,20 @@ occlusion_enabled = false
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
 
 [node name="BoblinCharacter_tscn" parent="." unique_id=1672009507 instance=ExtResource("6_vol8w")]
-script = ExtResource("4_orq0m")
+
+[node name="HealingItem" parent="." unique_id=154971825 instance=ExtResource("7_healing")]
+position = Vector2(80, 80)
+
+[node name="Banana" parent="." unique_id=632344693 instance=ExtResource("8_banana")]
+position = Vector2(150, 80)
+
+[node name="BrownGoop" parent="." unique_id=922204826 instance=ExtResource("9_brown_goop")]
+position = Vector2(220, 80)
+
+[node name="EnergyDrink" parent="." unique_id=1822272679 instance=ExtResource("10_energy_drink")]
+position = Vector2(80, 150)
+
+[node name="GrumGrum" parent="." unique_id=980665506 instance=ExtResource("11_grum_grum")]
+position = Vector2(100, 150)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1607603139]

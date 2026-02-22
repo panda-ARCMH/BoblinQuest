@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var player_stats: PlayerStats = PlayerStats.new()
 @onready var sprite = self.get_node("AnimatedSprite2D")
 
+func get_player_stats() -> PlayerStats:
+	return player_stats
+
 func _ready() -> void:
 	player_stats.start_run();
 

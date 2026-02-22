@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://b4lqvxo7n8t7p"]
 
-[node name="GrumGrum" type="Node2D" unique_id=94164151]
+[ext_resource type="Script" uid="uid://bo7upxwelbiue" path="res://items/itemPickup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://oo1x854e6t0i" path="res://assets/assets/item/item_1.png" id="2_k054o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 8.0
+
+[node name="GrumGrum" type="Area2D" unique_id=980665506]
+script = ExtResource("1_script")
+item_id = "grum_grum_juice"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1257993059]
+texture = ExtResource("2_k054o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857667917]
+shape = SubResource("CircleShape2D_1")

@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://dea3pmyrhg7q6"]
+[gd_scene load_steps=3 format=3 uid="uid://dea3pmyrhg7q6"]
 
-[node name="BrownGoop" type="Node2D" unique_id=767582850]
+[ext_resource type="Script" uid="uid://bo7upxwelbiue" path="res://items/itemPickup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c7wvgm15nuoou" path="res://assets/item/item_3.png" id="2_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 8.0
+
+[node name="BrownGoop" type="Area2D"]
+script = ExtResource("1_script")
+item_id = "brown_goop"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")

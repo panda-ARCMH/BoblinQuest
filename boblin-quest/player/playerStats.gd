@@ -66,7 +66,22 @@ func is_dead() -> bool:
 	return player_health <=0
 
 # Heals the player on item pickup
-# TODO: Add item pick up functions
-func heal() -> void:
-	player_health = clamp(player_health, 0, get_max_health())
+func heal(amount: int = 0) -> void:
+	if amount > 0:
+		player_health = clamp(player_health + amount, 0, get_max_health())
+	else:
+		player_health = clamp(player_health, 0, get_max_health())
 	health_changed.emit(player_health, get_max_health())
+
+# Applies stat changes from item pickups (called by ItemPickupScript)
+func apply_stat_modifiers(modifiers: Dictionary) -> void:
+	if modifiers.has("max_health"):
+		additional_health += int(modifiers["max_health"])
+	if modifiers.has("heal"):
+		heal(int(modifiers["heal"]))
+	if modifiers.has("damage"):
+		additional_damage += int(roundf(modifiers["damage"]))
+	if modifiers.has("attack_speed"):
+		additional_attack_speed += float(modifiers["attack_speed"])
+	if modifiers.has("move_speed"):
+		additional_move_speed += float(modifiers["move_speed"])

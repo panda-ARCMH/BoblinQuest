@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://d0o4s721j58pu"]
+[gd_scene load_steps=4 format=3 uid="uid://d0o4s721j58pu"]
 
-[node name="HealingItem" type="Node2D" unique_id=70923905]
+[ext_resource type="Script" uid="uid://bo7upxwelbiue" path="res://items/itemPickup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://fhgkuh58m37t" path="res://assets/item/item_1.png" id="2_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 8.0
+
+[node name="HealingItem" type="Area2D"]
+script = ExtResource("1_script")
+item_id = "healing_potion"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
