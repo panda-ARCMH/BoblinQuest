@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsygj0hrg0opj"]
+
+[ext_resource type="Texture2D" uid="uid://oo1x854e6t0i" path="res://assets/assets/item/item_1.png" id="1_l747a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edcf6"]
+size = Vector2(15, 15)
+
+[node name="EnergyDrinkPickup" type="Area2D" unique_id=1325309398]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798322538]
+texture = ExtResource("1_l747a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143714170]
+shape = SubResource("RectangleShape2D_edcf6")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://brl8du1icu2k0"]
+
+[ext_resource type="PackedScene" uid="uid://bs8vureo3bil" path="res://items/baseItemPickup.tscn" id="1_36s2w"]
+[ext_resource type="Texture2D" uid="uid://mfa7yaiagtre" path="res://assets/assets/item/item_2.png" id="2_hxocq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5da4x"]
+size = Vector2(11, 10)
+
+[node name="bananaPickup" unique_id=1325309398 instance=ExtResource("1_36s2w")]
+script = null
+
+[node name="Sprite2D" parent="." index="0" unique_id=798322538]
+scale = Vector2(2, 2)
+texture = ExtResource("2_hxocq")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1143714170]
+shape = SubResource("RectangleShape2D_5da4x")

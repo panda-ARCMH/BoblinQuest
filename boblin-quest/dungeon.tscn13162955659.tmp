@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://baplemtd017hj"]
+
+[ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="2_qu0b2"]
+[ext_resource type="Texture2D" uid="uid://csvw4h5lauuhu" path="res://assets/initialconcept.png" id="3_noicg"]
+[ext_resource type="PackedScene" uid="uid://brl8du1icu2k0" path="res://items/bananaPickup.tscn" id="3_orq0m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orq0m"]
+texture = ExtResource("3_noicg")
+texture_region_size = Vector2i(128, 128)
+4:3/0 = 0
+3:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_my81p"]
+sources/0 = SubResource("TileSetAtlasSource_orq0m")
+
+[node name="Dungeon" type="Node2D" unique_id=65165132]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1609798865]
+z_index = -1
+tile_set = SubResource("TileSet_my81p")
+
+[node name="BoblinCharacterBody2D" parent="." unique_id=1426615787 instance=ExtResource("2_qu0b2")]
+
+[node name="Area2D" parent="." unique_id=1325309398 instance=ExtResource("3_orq0m")]
+position = Vector2(50, 50)
+scale = Vector2(2, 2)
