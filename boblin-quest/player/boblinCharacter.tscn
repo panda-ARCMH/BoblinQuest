@@ -27,6 +27,9 @@ animations = [{
 "speed": 8.5
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_piqky"]
+radius = 4.472136
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1e7qy"]
 radius = 6.0
 height = 14.0
@@ -42,6 +45,11 @@ frame = 1
 frame_progress = 0.41415083
 
 [node name="Area2D" type="Area2D" parent="." unique_id=897464344]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1511437973]
+shape = SubResource("CircleShape2D_piqky")
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687873000]
 shape = SubResource("CapsuleShape2D_1e7qy")
@@ -50,3 +58,6 @@ shape = SubResource("CapsuleShape2D_1e7qy")
 zoom = Vector2(2.5, 2.5)
 
 [node name="Hud" parent="Camera2D" unique_id=2008300080 instance=ExtResource("4_piqky")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
