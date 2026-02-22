@@ -2,10 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://nen1dkv62p1o" path="res://assets/world_tiles.png" id="2_noicg"]
 [ext_resource type="Texture2D" uid="uid://dhd628yyqqqd" path="res://world_tiles.png" id="2_q5kms"]
-[ext_resource type="Script" uid="uid://13l3k3ctgewr" path="res://Enemies/enemy_spawner.gd" id="3_tgur7"]
-[ext_resource type="PackedScene" uid="uid://cptsos77ce241" path="res://Enemies/BasicEnemy.tscn" id="4_uag5o"]
-[ext_resource type="PackedScene" uid="uid://de5xwicgo18vo" path="res://Enemies/TankEnemy.tscn" id="5_jqckn"]
-[ext_resource type="PackedScene" uid="uid://dchv7orpcubun" path="res://Enemies/RangedEnemy.tscn" id="6_o2cd7"]
 [ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
 [ext_resource type="PackedScene" uid="uid://d0o4s721j58pu" path="res://items/healing_item.tscn" id="7_healing"]
 [ext_resource type="PackedScene" uid="uid://cc82ck07xuhrg" path="res://items/banana.tscn" id="8_banana"]
@@ -313,10 +309,6 @@ tile_set = SubResource("TileSet_kun6q")
 rendering_quadrant_size = 12
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
-script = ExtResource("3_tgur7")
-basic_enemy_scene = ExtResource("4_uag5o")
-tank_enemy_scene = ExtResource("5_jqckn")
-ranged_enemy_scene = ExtResource("6_o2cd7")
 
 [node name="BoblinCharacter_tscn" parent="." unique_id=1672009507 instance=ExtResource("6_vol8w")]
 player_stats = SubResource("Resource_tgur7")
