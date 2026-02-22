@@ -6,5 +6,4 @@
 [node name="EnemyBase" unique_id=1774484772 instance=ExtResource("1_x4l1i")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1820081734]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_tlah4")

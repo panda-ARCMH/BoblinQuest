@@ -54,19 +54,3 @@ func _physics_process(delta: float) -> void:
 	# Player move speed determined by the Move Speed stat.
 	velocity = input_dir * player_stats.get_move_speed()
 	move_and_slide()
-# FIRE L9OOGIC
-var on_fire = false
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	on_fire = true
-	while on_fire:
-		await get_tree().create_timer(.25).timeout
-		player_stats.apply_damage(1)
-		if not on_fire:
-			break
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("exited fire")
-	on_fire = false
-  
-move_and_slide()
