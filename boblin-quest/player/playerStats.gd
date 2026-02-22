@@ -73,7 +73,7 @@ func is_dead() -> bool:
 
 ## Increases player max HP
 func on_add_max_health(amount: float = 1.0) -> void:
-	additional_health += 1.0
+	additional_health += amount
 	player_health = clamp(player_health, 0.0, get_max_health())
 
 ## Apply healing to the player current HP

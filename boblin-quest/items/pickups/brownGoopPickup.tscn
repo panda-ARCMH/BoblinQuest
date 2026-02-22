@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ksu08duqa5v"]
+
+[ext_resource type="PackedScene" uid="uid://bs8vureo3bil" path="res://items/baseItemPickup.tscn" id="1_7mvhl"]
+[ext_resource type="Script" path="res://items/pickups/brownGoopPickup.tscn.gd" id="2_vh5uy"]
+[ext_resource type="Texture2D" uid="uid://hn5dyum68yhk" path="res://assets/assets/item/item_3.png" id="3_ctoea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gbr5"]
+
+[node name="brown goop" unique_id=1325309398 instance=ExtResource("1_7mvhl")]
+script = ExtResource("2_vh5uy")
+item_id = "brown_goop"
+
+[node name="Sprite2D" parent="." index="0" unique_id=798322538]
+scale = Vector2(2, 2)
+texture = ExtResource("3_ctoea")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1143714170]
+shape = SubResource("RectangleShape2D_7gbr5")
