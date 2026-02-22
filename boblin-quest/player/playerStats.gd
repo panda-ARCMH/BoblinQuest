@@ -1,22 +1,20 @@
 extends Resource
 class_name PlayerStats
+signal health_changed(current: int, max_hp: int)
+#  Base Stats
+# -----------------------------------
+@export var base_health: int = 100
+@export var move_speed: float = 250.0
+@export var base_damage: int = 3
+@export var attack_speed: float = 1.0 # TODO: Cap Attack speed at something reasonable (like 2.0)
 
-## Base Stats
-## -----------------------------------
+# Player Health at RUNTIME
+@export var player_health: int = 100
 
-var base_health: float = 100.0
-var move_speed: float = 200.0
-var base_damage: float = 3.0
-var attack_speed: float = 1.0 # TODO: Cap Attack speed at something reasonable (like 2.0)
-
-## Player Health at RUNTIME
-var player_health: float = 100.0
-
-## Additional Stats
-## These stats are added on the base stats DURING gameplay
-## -----------------------------------
-
-var additional_health: float = 0.0
+# Additional Stats
+# -----------------------------------
+# These stats are added on the base stats DURING gameplay
+var additional_health: int = 0
 var additional_move_speed: float = 0.0
 var additional_damage: float = 0.0
 var additional_attack_speed: float = 0.0 # TODO: Cap Attack speed at something reasonable (like 2.0)
@@ -47,6 +45,7 @@ func start_run():
 	# Should reset to base since bonuses were cleared.
 	# DOUBLE CHECK THIS
 	player_health = get_max_health()
+	health_changed.emit(player_health, get_max_health())
 
 ## Resets the collected item bonuses collected IN RUN
 func reset_run_bonuses():
@@ -63,6 +62,7 @@ func reset_run_bonuses():
 ## if it falls between the current, min, and max player health.
 func apply_damage(damage_amount: float) -> void:
 	player_health = clamp(player_health - damage_amount, 0, get_max_health())
+	health_changed.emit(player_health, get_max_health())
 
 ## Determine whether the player is dead
 func is_dead() -> bool:
