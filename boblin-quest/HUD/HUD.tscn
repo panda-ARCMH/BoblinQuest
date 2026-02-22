@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c06ophgo06avd"]
 
 [ext_resource type="Texture2D" uid="uid://c2rdpdf41xyok" path="res://assets/art/hud.png" id="1_b7ubu"]
+[ext_resource type="Script" uid="uid://dx5pccb7isvw" path="res://HUD/healthbar.gd" id="2_amwvk"]
 [ext_resource type="Texture2D" uid="uid://yjmuebecv6q" path="res://assets/assets/player/player_1.png" id="2_ja1d4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b7ubu"]
@@ -11,10 +12,11 @@
 texture = ExtResource("1_b7ubu")
 expand_margin_top = 500.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7ubu"]
-bg_color = Color(0, 0.33333334, 0.05882353, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amwvk"]
+bg_color = Color(0.50361896, 0, 0.067570075, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkt0t"]
+bg_color = Color(1.8770993e-06, 0.72616464, 0.17428517, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aa5tu"]
 atlas = ExtResource("2_ja1d4")
@@ -68,9 +70,10 @@ offset_left = 46.0
 offset_top = 176.0
 offset_right = 364.0
 offset_bottom = 219.0
-theme_override_styles/background = SubResource("StyleBoxFlat_b7ubu")
-theme_override_styles/fill = SubResource("StyleBoxFlat_amwvk")
+theme_override_styles/background = SubResource("StyleBoxFlat_amwvk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lkt0t")
 rounded = true
+script = ExtResource("2_amwvk")
 
 [node name="profile" type="TextureRect" parent="ui/Control/Panel/bottom bar" unique_id=472368401]
 custom_minimum_size = Vector2(32, 32)
