@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://baplemtd017hj"]
 
 [ext_resource type="Texture2D" uid="uid://nen1dkv62p1o" path="res://assets/world_tiles.png" id="2_noicg"]
+[ext_resource type="Script" uid="uid://d1g0nt14oal5p" path="res://player/playerStats.gd" id="3_q5kms"]
 [ext_resource type="PackedScene" uid="uid://c5q1edwdtifuw" path="res://player/boblinCharacter.tscn" id="6_vol8w"]
 [ext_resource type="PackedScene" uid="uid://d0o4s721j58pu" path="res://items/healing_item.tscn" id="7_healing"]
 [ext_resource type="PackedScene" uid="uid://cc82ck07xuhrg" path="res://items/banana.tscn" id="8_banana"]
@@ -178,6 +179,11 @@ tile_size = Vector2i(12, 12)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_my81p")
 
+[sub_resource type="Resource" id="Resource_tgur7"]
+script = ExtResource("3_q5kms")
+player_health = 50
+metadata/_custom_type_script = "uid://d1g0nt14oal5p"
+
 [node name="Dungeon" type="Node2D" unique_id=65165132]
 
 [node name="TileMapLava" type="TileMapLayer" parent="." unique_id=1609798865]
@@ -193,6 +199,7 @@ occlusion_enabled = false
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1072455406]
 
 [node name="BoblinCharacter_tscn" parent="." unique_id=1672009507 instance=ExtResource("6_vol8w")]
+player_stats = SubResource("Resource_tgur7")
 
 [node name="HealingItem" parent="." unique_id=154971825 instance=ExtResource("7_healing")]
 position = Vector2(80, 80)
