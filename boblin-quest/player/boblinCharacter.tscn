@@ -34,6 +34,9 @@ radius = 4.472136
 radius = 6.0
 height = 14.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_attack"]
+size = Vector2(24, 20)
+
 [node name="BoblinCharacter_tscn" type="CharacterBody2D" unique_id=1672009507 groups=["Player"]]
 script = ExtResource("1_6muyc")
 
@@ -50,6 +53,15 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1511437973]
 shape = SubResource("CircleShape2D_piqky")
 debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("RectangleShape2D_attack")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687873000]
 shape = SubResource("CapsuleShape2D_1e7qy")

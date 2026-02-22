@@ -319,6 +319,7 @@ tank_enemy_scene = ExtResource("5_jqckn")
 ranged_enemy_scene = ExtResource("6_o2cd7")
 
 [node name="BoblinCharacter_tscn" parent="." unique_id=1672009507 instance=ExtResource("6_vol8w")]
+player_stats = SubResource("Resource_tgur7")
 
 [node name="HealingItem" parent="." unique_id=154971825 instance=ExtResource("7_healing")]
 position = Vector2(-110, 101)

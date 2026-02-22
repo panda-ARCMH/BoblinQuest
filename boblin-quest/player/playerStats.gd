@@ -43,7 +43,7 @@ func start_run():
 	
 	# Should reset to base since bonuses were cleared.
 	# DOUBLE CHECK THIS
-	player_health = get_max_health()
+	#player_health = get_max_health()
 	health_changed.emit(player_health, get_max_health())
 
 # Resets the collected item bonuses collected IN RUN
